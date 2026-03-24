@@ -3,10 +3,12 @@ package com.fumagalli.gerenciamento_livros.services;
 import com.fumagalli.gerenciamento_livros.models.LivroModel;
 import com.fumagalli.gerenciamento_livros.repositories.LivroRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
+@Service
 public class LivroService {
 
     @Autowired
@@ -20,7 +22,7 @@ public class LivroService {
         return livroRepository.save(livroModel);
     }
 
-    public Optional<LivroModel> buscarId(Long id){
+    public Optional<LivroModel> buscarPorId(Long id){
         return livroRepository.findById(id);
     }
 
